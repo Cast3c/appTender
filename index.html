@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=== CSS ===-->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <!--=== awesome icons ===-->
+    <script src="https://kit.fontawesome.com/8a17253cd0.js" crossorigin="anonymous"></script>
+
+    <!--=== boxicons icons ===-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--================== material icons ==================-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <title> Apptender </title>
+</head>
+
+<body>
+    <div class="page">
+        <!--================== HEAD ==================-->
+        <header>
+            <nav class="container header-nav">
+                <div class="brand-btn">
+                    <i class="fa-solid fa-bars nav-btn"></i>
+                    <span class="logo-brand">
+                        <img src="./assets/img/logoTecDev.png" alt="">
+                        <a href="#" class="name-brand">App-Tender</a>
+                    </span>
+
+                </div>
+                <div class="user-menu">
+                    <span class="user-name">
+                        <i class="fa-solid fa-bell nav-btn"></i>
+                    </span>
+                    <span class="avatar btn-profile">
+                        <img src="./assets/img/profile-1.jpg" alt="">
+                    </span>
+                    <div class="dropdown-menu">
+                        <a href="#">Perfil</a>
+                        <a href="#">Configuración</a>
+                        <a href="#">Cerrar sesión</a>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+        <!--================== SIDEBAR ==================-->
+        <aside>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#dashboard" class="nav-link" id="dashboard-btn">
+                            <i class='bx bxs-dashboard nav-btn'></i>
+                            <p class="nav-title">Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#punto-venta" class="nav-link" id="puntoVenta-btn">
+                            <i class="fa-solid fa-cash-register nav-btn"></i>
+                            <p class="nav-title">Punto de venta</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#clientes" class="nav-link" id="clientes-btn">
+                            <i class="fa-solid fa-user nav-btn"></i>
+                            <p class="nav-title">Clientes</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#facturacion" class="nav-link" id="facturas-btn">
+                            <i class="fa-solid fa-file-invoice-dollar nav-btn"></i>
+                            <p class="nav-title">Facturacion</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#inventarios" class="nav-link" id="inventarios-btn">
+                            <i class="fa-solid fa-list-check nav-btn"></i>
+                            <p class="nav-title">Inventarios</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#configuracion" class="nav-link" id="config-btn">
+                            <i class="fa-solid fa-gear nav-btn"></i>
+                            <p class="nav-title">Configuración</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="fa-solid fa-right-from-bracket logout-btn"></i>
+                            <p class="logout-title">Salir</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!--================== MAIN ==================-->
+        <main>
+            <div class="main-container">
+                <div class="main-dash">
+                    <!--================== Dashboard ==================-->
+                    <div class="dashboard" id="dashboard">
+                        <div class="section1">
+                            <div class="container-1"></div>
+                            <div class="container-1"></div>
+                            <div class="container-1"></div>
+                            <div class="container-1"></div>
+                            <div class="container-1"></div>
+                            <div class="container-1"></div>
+                            <div class="container-1"></div>
+                            <div class="container-1"></div>
+                        </div>
+                        <div class="section2">
+                            <div class="container-1"></div>
+                        </div>
+                        <div class="section3">
+                            <div class="container-1"></div>
+                        </div>
+                    </div>
+                    <!--================== Punto de venta ==================-->
+                    <div class="punto-venta" id="punto-venta">
+                        <div class="categorias">
+                            <div class="container-1 categoria-cont btn-cont">
+                                <span class="cat-img-cont">
+                                    <i class="fa-solid fa-bottle-water categoria-icon"></i>
+                                </span>
+                                <div class="categoria-group">
+                                    <div class="categoria-title">Bebidas</div>
+                                    <span class="categoria-info">Cantidad</span>
+                                </div>
+                            </div>
+                            <div class="container-1 categoria-cont btn-cont">
+                                <span class="cat-img-cont">
+                                    <i class="fa-solid fa-candy-cane categoria-icon"></i>
+                                </span>
+                                <div class="categoria-group">
+                                    <div class="categoria-title">Dulces</div>
+                                    <span class="categoria-info">Cantidad</span>
+                                </div>
+                            </div>
+                            <div class="container-1 categoria-cont btn-cont">
+                                <span class="cat-img-cont">
+                                    <i class="fa-solid fa-bowl-rice categoria-icon"></i>
+                                </span>
+                                <div class="categoria-group">
+                                    <div class="categoria-title">Paquetes</div>
+                                    <span class="categoria-info">Cantidad</span>
+                                </div>
+                            </div>
+                            <div class="container-1 categoria-cont btn-cont">
+                                <span class="cat-img-cont">
+                                    <i class="fa-solid fa-pizza-slice categoria-icon"></i>
+                                </span>
+                                <div class="categoria-group">
+                                    <div class="categoria-title">Cafeteria</div>
+                                    <span class="categoria-info">Cantidad</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carrito-compra">
+                            <div class="selected-prods">
+                                <div class="container-1 prod-list">
+                                    <span class="produc-title">Producto</span>
+                                    <span class="produc-info">5</span>
+                                    <span class="produc-cant">$5000</span>
+                                    <i class="fa-solid fa-trash-can" id="trash-btn"></i>
+                                </div>
+                                <div class="container-1 prod-list">
+                                    <span class="produc-title">Producto</span>
+                                    <span class="produc-info">5</span>
+                                    <span class="produc-cant">$5000</span>
+                                    <i class="fa-solid fa-trash-can" id="trash-btn"></i>
+                                </div>
+                                <div class="container-1 prod-list">
+                                    <span class="produc-title">Producto</span>
+                                    <span class="produc-info">5</span>
+                                    <span class="produc-cant">$5000</span>
+                                    <i class="fa-solid fa-trash-can" id="trash-btn"></i>
+                                </div>
+                                <div class="container-1 prod-list">
+                                    <span class="produc-title">Producto</span>
+                                    <span class="produc-info">5</span>
+                                    <span class="produc-cant">$5000</span>
+                                    <i class="fa-solid fa-trash-can" id="trash-btn"></i>
+                                </div>
+                            </div>
+                            <div class="total-prods">
+                                <div class="container-1">
+                                    <div class="subtotal-cont">
+                                        <div class="labels">
+                                            <span class="label-subTotal">Sub-total:</span>
+                                            <span class="label total">Taxes:</span>
+                                        </div>
+                                        <div class="values">
+                                            <span class="subTotal">$20000</span>
+                                            <span class="taxes">$3800</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lista-productos">
+                            <div class="container-1 product-cont">
+                                <div class="produc-title">Producto</div>
+                                <div class="produc-info">Info</div>
+                                <div class="produc-cant">num</div>
+                                <span class="select-cant">
+                                    <i class="fa-solid fa-square-plus" id="plus-btn"></i>
+                                    <span class="sqr-cant"></span>
+                                    <i class="fa-solid fa-square-minus" id="minus-btn"></i>
+                                </span>
+                            </div>
+                            <div class="container-1 product-cont">
+                                <div class="produc-title">Producto</div>
+                                <div class="produc-info">Info</div>
+                                <div class="produc-cant">num</div>
+                                <span class="select-cant">
+                                    <i class="fa-solid fa-square-plus" id="plus-btn"></i>
+                                    <span class="sqr-cant"></span>
+                                    <i class="fa-solid fa-square-minus" id="minus-btn"></i>
+                                </span>
+                            </div>
+                            <div class="container-1 product-cont">
+                                <div class="produc-title">Producto</div>
+                                <div class="produc-info">Info</div>
+                                <div class="produc-cant">num</div>
+                                <span class="select-cant">
+                                    <i class="fa-solid fa-square-plus" id="plus-btn"></i>
+                                    <span class="sqr-cant"></span>
+                                    <i class="fa-solid fa-square-minus" id="minus-btn"></i>
+                                </span>
+                            </div>
+                            <div class="container-1 product-cont">
+                                <div class="produc-title">Producto</div>
+                                <div class="produc-info">Info</div>
+                                <div class="produc-cant">num</div>
+                                <span class="select-cant">
+                                    <i class="fa-solid fa-square-plus" id="plus-btn"></i>
+                                    <span class="sqr-cant"></span>
+                                    <i class="fa-solid fa-square-minus" id="minus-btn"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--================== Clientes ==================-->
+                    <div class="clientes" id="clientes">
+                    </div>
+                    <!--================== Facturacion ==================-->
+                    <div class="facturacion" id="faturacion">
+                    </div>
+                    <!--================== Inventarios ==================-->
+                    <div class="inventarios" id="inventarios">
+                    </div>
+                    <!--================== Configuracion ==================-->
+                    <div class="configuracion" id="configuracion">
+                        <div class="container-1 config-option">
+                            <button type="submit" class="btn-config btn-opt">Productos</button>
+                            <button type="submit" class="btn-config btn-opt">Factura</button>
+                        </div>
+                        <div class="container-1 config-prod">
+                            <span class="title">Categoria</span>
+                            <div class="input-set">
+                                <form action="" method="post">
+                                    <fieldset>
+                                        <legend>Ingresa tu nueva categoria</legend>
+                                        <input type="text">
+                                        <button type="submit" class="btn-config save-btn">Guardar</button>
+                                        <button type="submit" class="btn-config cancel-btn">Cancelar</button>
+                                        <input type="file" name="" id="file_input">
+                                    </fieldset>
+                                </form>
+                                <div class="list-config"></div>
+                            </div>
+                        </div>
+                        <div class="container-1 config-prod">
+                            <span class="title">Tipo de empaque</span>
+                            <div class="input-set">
+                                <form action="" method="post">
+                                    <fieldset>
+                                        <legend>Ingresa tu nuevo tipo de emapque</legend>
+                                        <input type="text">
+                                        <button type="submit" class="btn-config save-btn">Guardar</button>
+                                        <button type="submit" class="btn-config cancel-btn">Cancelar</button>
+                                        <input type="file" name="" id="file_input">
+                                    </fieldset>
+                                </form>
+                                <div class="list-config"></div>
+                            </div>
+                        </div>
+                        <div class="container-1 config-prod">
+                            <span class="title">Proveedores</span>
+                            <div class="input-set">
+                                <form action="" method="post">
+                                    <fieldset>
+                                        <legend>Ingresa tu nuevo proveedor
+
+                                        </legend>
+                                        <input type="text">
+                                        <button type="submit" class="btn-config save-btn">Guardar</button>
+                                        <button type="submit" class="btn-config cancel-btn">Cancelar</button>
+                                        <input type="file" name="" id="file_input">
+                                    </fieldset>
+                                </form>
+                                <div class="list-config"></div>
+                            </div>
+                        </div>
+                        <div class="container-1 config-prod">
+                            <span class="title">Nuevo producto</span>
+                            <fieldset>
+                                <form action="" method="post"></form>
+                                <legend>Llena todos los campos</legend>
+                                <div class="new-product">
+                                    <input type="text" name="" id="" placeholder="Ingresa el nombre del producto">
+                                    <input type="number" name="" id="" placeholder="Ingresa el valor de compra">
+                                    <input type="number" name="" id="" placeholder="Igresa el valor de venta">
+                                    <select name="" id="" id="idEmpaque">
+                                        <option value="">Selecciona un tipo de empaque</option>
+                                    </select>
+                                    <select name="" id="" id="idProveedor">
+                                        <option value="">Selecciona un proveedor</option>
+                                    </select>
+                                    <select name="" id="" id="idCat">
+                                        <option value="">Selecciona una categoria</option>
+                                    </select>
+                                </div>
+                                <div class="group-btn">
+                                    <button type="submit" class="btn-config save-btn">Guardar</button>
+                                    <button type="submit" class="btn-config cancel-btn">Cancelar</button>
+                                </div>
+                                </form>
+                                <form method="get" action="" enctype="multipart/form-data">
+                                    <input type="file" name="" id="">
+                                </form>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
