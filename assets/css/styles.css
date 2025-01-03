@@ -175,15 +175,9 @@ img {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0 1rem 0 0rem;
+  padding: 1.5rem 1rem;
   border-radius: 1rem;
 }
-
-/* .brand-btn {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-} */
 
 .logo-brand>img {
   width: 2rem;
@@ -206,6 +200,8 @@ img {
 }
 
 .avatar>img {
+  display: flex;
+  justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
@@ -215,8 +211,77 @@ img {
 .btn-profile{
  cursor: pointer;
 }
+/* ================== user menu & notifications ================== */
 
-.dropdown-menu{
+.notifications-icon {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.notification-count {
+  position: absolute;
+  top: -5px; /* Ajusta según tu diseño */
+  right: -10px; /* Ajusta según tu diseño */
+  background-color: red;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+  z-index: var(--z-fixed);
+}
+
+/* animation for notifications count */
+.notification-count {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.notification-count.updated {
+  transform: scale(1.2); /* Hazlo más grande brevemente */
+  opacity: 0.8;
+}
+
+.notification-count.updated-end {
+  transform: scale(1); /* Regresa al tamaño normal */
+  opacity: 1;
+}
+
+
+.notifications-menu,
+.dropdown-menu {
+  display: none; /* Ocultos por defecto */
+  position: absolute;
+  top: 50px;
+  right: 2rem;
+  background-color: rgba(61, 63, 56, 0.8);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 1rem;
+  padding: 10px;
+}
+
+.notifications-menu a,
+.dropdown-menu a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: var(--text-color-ligth);
+}
+
+.notifications-menu a:hover,
+.dropdown-menu a:hover {
+  background: hsla(0, 0%, 95%, 0.9);
+  color: var(--title-color);
+}
+
+
+/* .dropdown-menu{
   display: none;
   position: absolute;
   top: 50px;
@@ -238,7 +303,7 @@ img {
 .dropdown-menu a:hover{
   background: hsla(0, 0, 5, .9);
   color: var(--title-color);
-}
+} */
 
 /* ================== SIDEBAR - NAV ================== */
 .nav-btn {
