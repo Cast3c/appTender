@@ -32,8 +32,8 @@ navButton.addEventListener("click", function () {
       navbar.classList.add("text-visible");
     }, 3500); // Coincide con la duración de la transición CSS
   } else {
-    navbar.style.width = "70px"; // Ancho reducido de la barra
-    wrapper.style.setProperty("grid-template-columns", "70px 1fr");
+    navbar.style.width = "100px"; // Ancho reducido de la barra
+    wrapper.style.setProperty("grid-template-columns", "170px 1fr");
     navButton.style.transform = "rotate(0deg)";
     navbar.classList.remove("text-visible");
   }
