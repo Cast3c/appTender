@@ -1,4 +1,5 @@
 const navButton = document.querySelector(".nav-btn");
+const navLink = document.querySelectorAll(".nav-link");
 const navbar = document.querySelector("aside");
 const wrapper = document.querySelector(".page");
 const profileBtn = document.querySelector(".btn-profile");
@@ -15,23 +16,34 @@ const clientesSection = document.querySelector(".clientes");
 const facturacionSection = document.querySelector(".facturacion");
 const inventariosSection = document.querySelector(".inventarios");
 const configuracionSection = document.querySelector(".configuracion");
+const navTitleText = document.querySelectorAll(".nav-title")
 
 //================== show/hide sidebar ==================//
 navButton.addEventListener("click", function () {
-  if (navButton.style.transform === "rotate(0deg)") {
-    navbar.style.width = "100%";
+  navbar.classList.toggle("maximized");
+
+  if (navbar.classList.contains("maximized")) {
+    navbar.style.width = "15rem"; // Ancho completo de la barra
     wrapper.style.setProperty("grid-template-columns", "15rem 1fr");
-    navButton.style.setProperty("transform", "rotate(90deg)");
+    navButton.style.transform = "rotate(90deg)";
+
+    // Retrasar la aparición del texto
+    setTimeout(() => {
+      navbar.classList.add("text-visible");
+    }, 3500); // Coincide con la duración de la transición CSS
   } else {
-    wrapper.style.setProperty("grid-template-columns", "3.5rem 1fr");
-    navButton.style.setProperty("transform", "rotate(0deg)");
+    navbar.style.width = "70px"; // Ancho reducido de la barra
+    wrapper.style.setProperty("grid-template-columns", "70px 1fr");
+    navButton.style.transform = "rotate(0deg)";
+    navbar.classList.remove("text-visible");
   }
 });
 
+
 //================== show/hide profile menu ==================//
-profileBtn.addEventListener("click", function () {
-  dropdownProfile.style.display === "block" ? "none" : "block";
-});
+// profileBtn.addEventListener("click", function () {
+//   dropdownProfile.style.display === "block" ? "none" : "block";
+// });
 
 /* ================== sidebar-buttons-function ================== */
 dashboardBtn.addEventListener("click", function () {
