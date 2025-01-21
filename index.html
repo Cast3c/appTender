@@ -134,126 +134,95 @@
                     </div>
                     <!--================== Punto de venta ==================-->
                     <div class="punto-venta" id="punto-venta">
-                        <div class="categorias">
-                            <div class="container-1 categoria-cont btn-cont">
-                                <span class="cat-img-cont">
-                                    <i class="fa-solid fa-bottle-water categoria-icon"></i>
-                                </span>
-                                <div class="categoria-group">
+                        <div class="column-left">
+                            <div class="categorias">
+                                <div class=" container-1 categoria-cont btn-cont filtro" data-categoria="bebidas">
+                                    <span class="cat-img-cont">
+                                        <i class="fa-solid fa-bottle-water categoria-icon"></i>
+                                    </span>
                                     <div class="categoria-title">Bebidas</div>
-                                    <span class="categoria-info">Cantidad</span>
                                 </div>
-                            </div>
-                            <div class="container-1 categoria-cont btn-cont">
-                                <span class="cat-img-cont">
-                                    <i class="fa-solid fa-candy-cane categoria-icon"></i>
-                                </span>
-                                <div class="categoria-group">
+                                <div class="container-1 categoria-cont btn-cont filtro" data-categoria="dulces">
+                                    <span class="cat-img-cont">
+                                        <i class="fa-solid fa-candy-cane categoria-icon"></i>
+                                    </span>
                                     <div class="categoria-title">Dulces</div>
-                                    <span class="categoria-info">Cantidad</span>
                                 </div>
-                            </div>
-                            <div class="container-1 categoria-cont btn-cont">
-                                <span class="cat-img-cont">
-                                    <i class="fa-solid fa-bowl-rice categoria-icon"></i>
-                                </span>
-                                <div class="categoria-group">
+                                <div class="container-1 categoria-cont btn-cont filtro" data-categoria="paquetes">
+                                    <span class="cat-img-cont">
+                                        <i class="fa-solid fa-bowl-rice categoria-icon"></i>
+                                    </span>
                                     <div class="categoria-title">Paquetes</div>
-                                    <span class="categoria-info">Cantidad</span>
+                                </div>
+                                <div class="container-1 categoria-cont btn-cont filtro" data-categoria="lacteos">
+                                    <span class="cat-img-cont">
+                                        <i class="fa-solid fa-pizza-slice categoria-icon"></i>
+                                    </span>
+                                    <div class="categoria-title">Lacteos</div>
+                                </div>
+                                <div class="container-1 categoria-cont btn-cont filtro" data-categoria="abarrotes">
+                                    <span class="cat-img-cont">
+                                        <i class="fa-solid fa-bottle-water categoria-icon"></i>
+                                    </span>
+                                    <div class="categoria-title">Abarrotes</div>
+                                </div>
+                                <div class="container-1 categoria-cont btn-cont filtro" data-categoria="Verduras">
+                                    <span class="cat-img-cont">
+                                        <i class="fa-solid fa-candy-cane categoria-icon"></i>
+                                    </span>
+                                    <div class="categoria-title">Verduras</div>
+                                </div>
+                                <div class="container-1 categoria-cont btn-cont filtro" data-categoria="carnes">
+                                    <span class="cat-img-cont">
+                                        <i class="fa-solid fa-bowl-rice categoria-icon"></i>
+                                    </span>
+                                    <div class="categoria-title">Carnes</div>
+                                </div>
+                                <div class="container-1 categoria-cont btn-cont filtro" data-categoria="todos">
+                                    <span class="cat-img-cont">
+                                        <i class="fa-solid fa-pizza-slice categoria-icon"></i>
+                                    </span>
+                                    <div class="categoria-title">Todos</div>
                                 </div>
                             </div>
-                            <div class="container-1 categoria-cont btn-cont">
-                                <span class="cat-img-cont">
-                                    <i class="fa-solid fa-pizza-slice categoria-icon"></i>
-                                </span>
-                                <div class="categoria-group">
-                                    <div class="categoria-title">Cafeteria</div>
-                                    <span class="categoria-info">Cantidad</span>
+                            <div class="lista-productos">
+                                <h2>Lista de Productos</h2>
+                                <div class="search-container">
+                                    <i class="fas fa-search"></i> <!-- Ícono de la lupa -->
+                                    <input type="text" class="search-input" placeholder="Buscar...">
+                                </div>
+                                <div class="productos-lista">
+                                    <!-- Productos serán generados dinámicamente -->
                                 </div>
                             </div>
                         </div>
                         <div class="carrito-compra">
                             <div class="selected-prods">
-                                <div class="container-1 prod-list">
-                                    <span class="produc-title">Producto</span>
-                                    <span class="produc-info">5</span>
-                                    <span class="produc-cant">$5000</span>
-                                    <i class="fa-solid fa-trash-can" id="trash-btn"></i>
+                                <div class="title-prod-list">
+                                    <span>Producto</span>
+                                    <span>cantidad</span>
+                                    <span>Val/uni</span>
+                                    <span>Val/total</span>
+                                    <span>Borrar</span>
                                 </div>
-                                <div class="container-1 prod-list">
-                                    <span class="produc-title">Producto</span>
-                                    <span class="produc-info">5</span>
-                                    <span class="produc-cant">$5000</span>
-                                    <i class="fa-solid fa-trash-can" id="trash-btn"></i>
-                                </div>
-                                <div class="container-1 prod-list">
-                                    <span class="produc-title">Producto</span>
-                                    <span class="produc-info">5</span>
-                                    <span class="produc-cant">$5000</span>
-                                    <i class="fa-solid fa-trash-can" id="trash-btn"></i>
-                                </div>
-                                <div class="container-1 prod-list">
-                                    <span class="produc-title">Producto</span>
-                                    <span class="produc-info">5</span>
-                                    <span class="produc-cant">$5000</span>
-                                    <i class="fa-solid fa-trash-can" id="trash-btn"></i>
-                                </div>
-                            </div>
-                            <div class="total-prods">
-                                <div class="container-1">
-                                    <div class="subtotal-cont">
-                                        <div class="labels">
-                                            <span class="label-subTotal">Sub-total:</span>
-                                            <span class="label total">Taxes:</span>
-                                        </div>
-                                        <div class="values">
-                                            <span class="subTotal">$20000</span>
-                                            <span class="taxes">$3800</span>
-                                        </div>
+                                <div class="prod-list">
+                                    <div class="prod-cart">
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="lista-productos">
-                            <div class="container-1 product-cont">
-                                <div class="produc-title">Producto</div>
-                                <div class="produc-info">Info</div>
-                                <div class="produc-cant">num</div>
-                                <span class="select-cant">
-                                    <i class="fa-solid fa-square-plus" id="plus-btn"></i>
-                                    <span class="sqr-cant"></span>
-                                    <i class="fa-solid fa-square-minus" id="minus-btn"></i>
-                                </span>
-                            </div>
-                            <div class="container-1 product-cont">
-                                <div class="produc-title">Producto</div>
-                                <div class="produc-info">Info</div>
-                                <div class="produc-cant">num</div>
-                                <span class="select-cant">
-                                    <i class="fa-solid fa-square-plus" id="plus-btn"></i>
-                                    <span class="sqr-cant"></span>
-                                    <i class="fa-solid fa-square-minus" id="minus-btn"></i>
-                                </span>
-                            </div>
-                            <div class="container-1 product-cont">
-                                <div class="produc-title">Producto</div>
-                                <div class="produc-info">Info</div>
-                                <div class="produc-cant">num</div>
-                                <span class="select-cant">
-                                    <i class="fa-solid fa-square-plus" id="plus-btn"></i>
-                                    <span class="sqr-cant"></span>
-                                    <i class="fa-solid fa-square-minus" id="minus-btn"></i>
-                                </span>
-                            </div>
-                            <div class="container-1 product-cont">
-                                <div class="produc-title">Producto</div>
-                                <div class="produc-info">Info</div>
-                                <div class="produc-cant">num</div>
-                                <span class="select-cant">
-                                    <i class="fa-solid fa-square-plus" id="plus-btn"></i>
-                                    <span class="sqr-cant"></span>
-                                    <i class="fa-solid fa-square-minus" id="minus-btn"></i>
-                                </span>
+                            <div class="invoice-total">
+                                <div class="subtotal-cont">
+                                    <div class="labels">
+                                        <span class="label-subTotal">Sub-total:</span>
+                                        <span class="label-taxes">Taxes:</span>
+                                        <span class="label-total">Total:</span>
+                                    </div>
+                                    <div class="values">
+                                        <span class="subTotal"></span>
+                                        <span class="taxes"></span>
+                                        <span class="total"></span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -350,7 +319,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </main>
     </div>
     <script src="./assets/js/main.js"></script>

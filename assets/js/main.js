@@ -19,7 +19,7 @@ const clientesSection = document.querySelector(".clientes");
 const facturacionSection = document.querySelector(".facturacion");
 const inventariosSection = document.querySelector(".inventarios");
 const configuracionSection = document.querySelector(".configuracion");
-const navTitleText = document.querySelectorAll(".nav-title")
+const navTitleText = document.querySelectorAll(".nav-title");
 
 //================== show/hide sidebar ==================//
 navButton.addEventListener("click", function () {
@@ -91,7 +91,7 @@ updateNotificationCount(3); // Cambia este valor según tus datos
 // Ejemplo: Simula una nueva notificación
 setTimeout(() => {
   updateNotificationCount(5);
-  animateNotificationCount() // Cambia el contador a 5
+  animateNotificationCount(); // Cambia el contador a 5
 }, 5000); // Después de 5 segundos
 
 /* ================== sidebar-buttons-function ================== */
@@ -101,16 +101,25 @@ dashboardBtn.addEventListener("click", function () {
   clientesSection.style.display = "none";
   facturacionSection.style.display = "none";
   inventariosSection.style.display = "none";
-  configuracionSection.style.display =  "none";
+  configuracionSection.style.display = "none";
 });
 
 puntoVentaBtn.addEventListener("click", function () {
+  dashboardSection.style.display = "none";
+  puntoVentaSection.style.display = "grid";
+  clientesSection.style.display = "none";
+  facturacionSection.style.display = "none";
+  inventariosSection.style.display = "none";
+  configuracionSection.style.display = "none";
+});
+
+clientesBtn.addEventListener("click", function () {
   dashboardSection.style.display = "none";
   puntoVentaSection.style.display = "none";
   clientesSection.style.display = "none";
   facturacionSection.style.display = "none";
   inventariosSection.style.display = "none";
-  configuracionSection.style.display =  "none";
+  configuracionSection.style.display = "none";
 });
 
 clientesBtn.addEventListener("click", function () {
@@ -119,41 +128,178 @@ clientesBtn.addEventListener("click", function () {
   clientesSection.style.display = "grid";
   facturacionSection.style.display = "none";
   inventariosSection.style.display = "none";
-  configuracionSection.style.display =  "none";
-})
+  configuracionSection.style.display = "none";
+});
 
-clientesBtn.addEventListener("click", function () {
-  dashboardSection.style.display = "none";
-  puntoVentaSection.style.display = "none";
-  clientesSection.style.display = "grid";
-  facturacionSection.style.display = "none";
-  inventariosSection.style.display = "none";
-  configuracionSection.style.display =  "none";
-})
-
-facturasBtn.addEventListener("click", function(){
+facturasBtn.addEventListener("click", function () {
   dashboardSection.style.display = "none";
   puntoVentaSection.style.display = "none";
   clientesSection.style.display = "none";
   facturacionSection.style.display = "grid";
   inventariosSection.style.display = "none";
-  configuracionSection.style.display =  "none";
-})
+  configuracionSection.style.display = "none";
+});
 
-inventariosBtn.addEventListener("click", function(){
+inventariosBtn.addEventListener("click", function () {
   dashboardSection.style.display = "none";
   puntoVentaSection.style.display = "none";
   clientesSection.style.display = "none";
   facturacionSection.style.display = "none";
   inventariosSection.style.display = "grid";
-  configuracionSection.style.display =  "none";
-})
+  configuracionSection.style.display = "none";
+});
 
-configBtn.addEventListener("click", function(){
+configBtn.addEventListener("click", function () {
   dashboardSection.style.display = "none";
   puntoVentaSection.style.display = "none";
   clientesSection.style.display = "none";
   facturacionSection.style.display = "none";
   inventariosSection.style.display = "none";
-  configuracionSection.style.display =  "grid";
-})
+  configuracionSection.style.display = "grid";
+});
+
+/* ============== Listado de productos ============== */
+
+const productos = [
+  { id: 1, nombre: "Agua", categoria: "bebidas", precio: 1.5, impuesto: 0.2 },
+  {
+    id: 2,
+    nombre: "Refresco",
+    categoria: "bebidas",
+    precio: 2.0,
+    impuesto: 0.3,
+  },
+  {
+    id: 3,
+    nombre: "Chocolate",
+    categoria: "dulces",
+    precio: 1.2,
+    impuesto: 0.18,
+  },
+  {
+    id: 4,
+    nombre: "Galletas",
+    categoria: "dulces",
+    precio: 2.5,
+    impuesto: 0.25,
+  },
+  { id: 5, nombre: "Arroz", categoria: "paquetes", precio: 3.0, impuesto: 0.4 },
+  { id: 6, nombre: "Leche", categoria: "lacteos", precio: 1.8, impuesto: 0.15 },
+];
+
+const productosLista = document.querySelector(".productos-lista");
+
+function renderizarProductos(productosFiltrados) {
+  productosLista.innerHTML = ""; // Limpia la lista de productos
+  productosFiltrados.forEach((producto) => {
+    const productoDiv = document.createElement("div");
+    productoDiv.classList.add("producto");
+    productoDiv.innerHTML = `
+      <span class="nombre">${producto.nombre}</span>
+      <span class="categoria">${producto.categoria}</span>
+      <span class="precio">$${producto.precio.toFixed(2)}</span>
+      <span class="impuesto">Imp: $${producto.impuesto.toFixed(2)}</span>
+      <button class="agregar-carrito" data-id="${
+        producto.id
+      }"><i class="fa-solid fa-cart-shopping"></i></button>
+    `;
+    productosLista.appendChild(productoDiv);
+  });
+}
+
+// Renderiza todos los productos al cargar la página
+renderizarProductos(productos);
+
+const botonesFiltro = document.querySelectorAll(".filtro");
+
+botonesFiltro.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    const categoria = boton.dataset.categoria;
+    if (categoria === "todos") {
+      renderizarProductos(productos);
+    } else {
+      const productosFiltrados = productos.filter(
+        (producto) => producto.categoria === categoria
+      );
+      renderizarProductos(productosFiltrados);
+    }
+  });
+});
+
+// Añadir al carrito
+const carrito = [];
+
+const prodList = document.querySelector(".prod-list");
+
+productosLista.addEventListener("click", (e) => {
+  if (e.target.classList.contains("agregar-carrito")) {
+    const productoId = parseInt(e.target.dataset.id);
+    const producto = productos.find((prod) => prod.id === productoId);
+    carrito.push(producto);
+    console.log("Carrito:", carrito);
+    alert(`${producto.nombre} añadido al carrito`);
+  }
+
+  renderizarListaCarrito();
+  actualizarValoresCarrito();
+});
+
+function renderizarListaCarrito() {
+  prodList.innerHTML = "";
+  carrito.forEach((producto, index) => {
+    const prodCart = document.createElement("div");
+    prodCart.classList.add("prod-cart");
+    prodCart.innerHTML = `
+      <span class="produc-title">${producto.nombre}</span>
+      <input type="number" class="produc-cant" value="${
+        producto.cantidad || 1
+      }" data-index="${index}">
+      <span class="produc-unit">${producto.precio.toFixed(2)}</span>
+      <span class="produc-tot">${(
+        producto.precio * (producto.cantidad || 1)
+      ).toFixed(2)}</span>
+      <button class="btn-clear" data-index="${index}">
+        <i class="fa-solid fa-trash-can" id="trash-btn"></i>
+      </button> 
+    `;
+    prodList.appendChild(prodCart);
+  });
+}
+
+prodList.addEventListener("input", (e) => {
+  if (e.target.classList.contains("produc-cant")) {
+    const index = e.target.dataset.index;
+    const nuevaCantidad = parseInt(e.target.value);
+    carrito[index].cantidad = nuevaCantidad > 0 ? nuevaCantidad : 1;
+    renderizarListaCarrito();
+  }
+  actualizarValoresCarrito()
+});
+
+prodList.addEventListener("click", (e) => {
+  if (e.target.closest(".btn-clear")) {
+    const index = e.target.closest(".btn-clear").dataset.index;
+    carrito.splice(index, 1);
+    renderizarListaCarrito();
+  }
+  actualizarValoresCarrito()
+});
+
+/*========= SUBTOTAL, TAXES Y MEDIO DE PAGO =========*/
+function actualizarValoresCarrito() {
+  const subtotal = carrito.reduce(
+    (acum, produc) => acum + produc.precio * (produc.cantidad || 1),
+    0
+  );
+
+  const taxes = carrito.reduce(
+    (acum, produc) => acum + produc.impuesto * (produc.cantidad || 1), 0
+  );
+
+  const total = subtotal + taxes
+  document.querySelector(".subTotal").textContent = `$${subtotal.toFixed(2)}`;
+  document.querySelector(".taxes").textContent = `$${taxes.toFixed(2)}`;
+  document.querySelector(".total").textContent = `$${total.toFixed(2)}`;
+}
+
+
