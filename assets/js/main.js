@@ -325,49 +325,69 @@ function getInvoices(){
   return invoices
 }
 
-function limpiezaVariables(){
-
-}
-
-const botonesTipoPago = document.querySelectorAll(".tipoPago");
-
-invoiceCash.addEventListener("click", (e) =>{
-  let tipoDePago = ""
-  botonesTipoPago.forEach((boton) =>{
-    boton.addEventListener("click", ()=>{
-      const tipoPago = boton.dataset.tipoPago;
-      if(tipoPago === "cash"){
-        tipoDePago = "cash"
-      }else{
-
-      }
-    })
-  })
-  const invoice = {
-    id: Date.now(),
-    cliente: "mostrador",
-    tipoPago: "efectivo",
-    productos: carrito,
-    subtotal: document.querySelector(".subTotal").textContent,
-    impuestos: document.querySelector(".taxes").textContent,
-    total: document.querySelector(".total").textContent
-  };
-  console.log(invoice)
-  alert(`${invoice} Factura creada y guardada`);
-  guardarFacturaEnLocalStorage(invoice)
-  prodList.innerHTML = "";
+function limpiarCarrito(){
   carrito = [];
-  console.log(carrito)
   document.querySelector(".subTotal").innerHTML= "";
   document.querySelector(".taxes").innerHTML="";
   document.querySelector(".total").innerHTML="";
+  prodList.innerHTML= "";
+}
+
+function createInvoice(tipoPago){
+  if (carrito.length === 0) {
+    alert("Aún no hay productos seleccionados para facturar");
+    return;
+  }
+  let invoice = {
+    id: Date.now(),
+    cliente: "mostrador",
+    tipoPago: tipoPago,
+    productos: carrito,
+    subtotal: document.querySelector(".subTotal").textContent,
+    impuestos: document.querySelector(".taxes").textContent,
+    total: document.querySelector(".total").textContent,
+  }
+  console.log(invoice)
+  alert(`${invoice} Factura creada y guardada`)
+  guardarFacturaEnLocalStorage(invoice)
+  limpiarCarrito()
+}
+
+document.querySelectorAll(".btn-pago").forEach((boton) =>{
+  boton.addEventListener("click", function (){
+    const tipoPago = this.getAttribute("data-tipoPago");
+    console.log("Tipo de pago seleccionado", tipoPago)
+    createInvoice(tipoPago)
+  })
 })
 
+// invoiceCash.addEventListener("click", (e) =>{
+//   let tipoDePago = ""
+//   // botonesTipoPago.forEach((boton) =>{
+//   //   boton.addEventListener("click", ()=>{
+//   //     const tipoPago = boton.dataset.tipoPago;
+//   //     if(tipoPago === "cash"){
+//   //       tipoDePago = "cash"
+//   //     }else{
 
-
-function creaFactura(tipoPago){
-  
-}
+//   //     }
+//   //   })
+//   // })
+//   const invoice = {
+//     id: Date.now(),
+//     cliente: "mostrador",
+//     tipoPago: "efectivo",
+//     productos: carrito,
+//     subtotal: document.querySelector(".subTotal").textContent,
+//     impuestos: document.querySelector(".taxes").textContent,
+//     total: document.querySelector(".total").textContent
+//   };
+//   console.log(invoice)
+//   alert(`${invoice} Factura creada y guardada`);
+//   guardarFacturaEnLocalStorage(invoice)
+//   prodList.innerHTML = "";
+//   console.log(carrito)
+// })
 
 
 
