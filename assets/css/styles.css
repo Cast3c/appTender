@@ -712,6 +712,9 @@ aside.maximized .nav-link {
   display: grid;
   align-items: center;
   width: 100%;
+  border-radius: 10px;
+  background-color: white;
+  padding: 1rem;
 }
 
 .carrito-compra {
@@ -749,7 +752,6 @@ aside.maximized .nav-link {
   justify-content: space-between;
   flex-direction: row;
   border-bottom: 2px #F2295F dotted;
-  background-color: white;
 }
 
 .labels {
@@ -762,6 +764,23 @@ aside.maximized .nav-link {
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+}
+
+.forma-pago{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.btn-pago{
+  background-color: #F2295F;
+  border-radius: 10px;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+  color: #131426;
 }
 
 /* ================== configuracion ================== */

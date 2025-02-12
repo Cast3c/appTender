@@ -21,6 +21,7 @@ const inventariosSection = document.querySelector(".inventarios");
 const configuracionSection = document.querySelector(".configuracion");
 const navTitleText = document.querySelectorAll(".nav-title");
 
+
 //================== show/hide sidebar ==================//
 navButton.addEventListener("click", function () {
   navbar.classList.toggle("maximized");
@@ -227,7 +228,7 @@ botonesFiltro.forEach((boton) => {
 });
 
 // Añadir al carrito
-const carrito = [];
+let carrito = [];
 
 const prodList = document.querySelector(".prod-list");
 
@@ -301,5 +302,74 @@ function actualizarValoresCarrito() {
   document.querySelector(".taxes").textContent = `$${taxes.toFixed(2)}`;
   document.querySelector(".total").textContent = `$${total.toFixed(2)}`;
 }
+
+const invoiceCash = document.querySelector(".cash");
+
+function guardarFacturaEnLocalStorage(invoice) {
+  // Obtén facturas existentes
+  const invoices = JSON.parse(localStorage.getItem("Facturas")) || [];
+  
+  // Añade la nueva factura
+  invoices.push(invoice);
+  
+  // Guarda las facturas actualizadas
+  localStorage.setItem("Facturas", JSON.stringify(invoices));
+  
+  console.log("Factura guardada en localStorage:", invoice);
+  getInvoices()
+}
+
+function getInvoices(){
+  const invoices = JSON.parse(localStorage.getItem("Facturas")) || [];
+  console.log("Facturas guardadas:", invoices)
+  return invoices
+}
+
+function limpiezaVariables(){
+
+}
+
+const botonesTipoPago = document.querySelectorAll(".tipoPago");
+
+invoiceCash.addEventListener("click", (e) =>{
+  let tipoDePago = ""
+  botonesTipoPago.forEach((boton) =>{
+    boton.addEventListener("click", ()=>{
+      const tipoPago = boton.dataset.tipoPago;
+      if(tipoPago === "cash"){
+        tipoDePago = "cash"
+      }else{
+
+      }
+    })
+  })
+  const invoice = {
+    id: Date.now(),
+    cliente: "mostrador",
+    tipoPago: "efectivo",
+    productos: carrito,
+    subtotal: document.querySelector(".subTotal").textContent,
+    impuestos: document.querySelector(".taxes").textContent,
+    total: document.querySelector(".total").textContent
+  };
+  console.log(invoice)
+  alert(`${invoice} Factura creada y guardada`);
+  guardarFacturaEnLocalStorage(invoice)
+  prodList.innerHTML = "";
+  carrito = [];
+  console.log(carrito)
+  document.querySelector(".subTotal").innerHTML= "";
+  document.querySelector(".taxes").innerHTML="";
+  document.querySelector(".total").innerHTML="";
+})
+
+
+
+function creaFactura(tipoPago){
+  
+}
+
+
+
 
 
